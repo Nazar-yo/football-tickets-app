@@ -1,13 +1,13 @@
 package football.tickets.controller;
 
-import java.util.List;
-import java.util.stream.Collectors;
-import javax.validation.Valid;
 import football.tickets.dto.request.GameRequestDto;
 import football.tickets.dto.response.GameResponseDto;
 import football.tickets.model.Game;
 import football.tickets.service.GameService;
 import football.tickets.service.mapper.GameMapper;
+import java.util.List;
+import java.util.stream.Collectors;
+import javax.validation.Valid;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

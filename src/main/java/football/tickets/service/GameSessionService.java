@@ -1,8 +1,8 @@
 package football.tickets.service;
 
+import football.tickets.model.GameSession;
 import java.time.LocalDate;
 import java.util.List;
-import football.tickets.model.GameSession;
 
 public interface GameSessionService {
     List<GameSession> findAvailableSessions(Long movieId, LocalDate date);

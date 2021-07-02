@@ -1,15 +1,15 @@
 package football.tickets.controller;
 
-import java.time.LocalDate;
-import java.util.List;
-import java.util.stream.Collectors;
-import javax.validation.Valid;
 import football.tickets.dto.request.GameSessionRequestDto;
 import football.tickets.dto.response.GameSessionResponseDto;
 import football.tickets.model.GameSession;
 import football.tickets.service.GameSessionService;
 import football.tickets.service.mapper.GameSessionMapper;
 import football.tickets.util.DateTimePatternUtil;
+import java.time.LocalDate;
+import java.util.List;
+import java.util.stream.Collectors;
+import javax.validation.Valid;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -44,8 +44,8 @@ public class GameSessionController {
     @GetMapping("/available")
     public List<GameSessionResponseDto> getAll(@RequestParam Long movieId,
                                                @RequestParam
-                                                @DateTimeFormat(pattern = DATE_PATTERN)
-                                                        LocalDate date) {
+                                               @DateTimeFormat(pattern = DATE_PATTERN)
+                                                       LocalDate date) {
         return gameSessionService.findAvailableSessions(movieId, date)
                 .stream()
                 .map(gameSessionMapper::mapToDto)

@@ -1,8 +1,8 @@
 package football.tickets.dto.request;
 
-import javax.validation.constraints.Size;
 import football.tickets.lib.FieldsValueMatch;
 import football.tickets.lib.ValidEmail;
+import javax.validation.constraints.Size;
 
 @FieldsValueMatch(
         field = "password",

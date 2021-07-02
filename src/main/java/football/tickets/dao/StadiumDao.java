@@ -1,8 +1,8 @@
 package football.tickets.dao;
 
+import football.tickets.model.Stadium;
 import java.util.List;
 import java.util.Optional;
-import football.tickets.model.Stadium;
 
 public interface StadiumDao {
     Stadium add(Stadium stadium);

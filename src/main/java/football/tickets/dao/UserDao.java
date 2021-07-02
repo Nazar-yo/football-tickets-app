@@ -1,7 +1,7 @@
 package football.tickets.dao;
 
-import java.util.Optional;
 import football.tickets.model.User;
+import java.util.Optional;
 
 public interface UserDao {
     User add(User user);

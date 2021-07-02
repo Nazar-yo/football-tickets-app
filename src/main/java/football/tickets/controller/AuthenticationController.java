@@ -1,11 +1,11 @@
 package football.tickets.controller;
 
-import javax.validation.Valid;
 import football.tickets.dto.request.UserRequestDto;
 import football.tickets.dto.response.UserResponseDto;
 import football.tickets.model.User;
 import football.tickets.service.AuthenticationService;
 import football.tickets.service.mapper.UserMapper;
+import javax.validation.Valid;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;

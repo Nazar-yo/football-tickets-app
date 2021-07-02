@@ -3,6 +3,8 @@ package football.tickets.service.impl;
 import football.tickets.exception.DataProcessingException;
 import football.tickets.model.User;
 import football.tickets.service.UserService;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.security.core.userdetails.User.UserBuilder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -12,6 +14,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class CustomUserDetailsService implements UserDetailsService {
     private final UserService userService;
+    private static final Logger logger = LogManager.getLogger(CustomUserDetailsService.class);
 
     public CustomUserDetailsService(UserService userService) {
         this.userService = userService;
@@ -23,6 +26,7 @@ public class CustomUserDetailsService implements UserDetailsService {
         try {
             user = userService.findByEmail(username);
         } catch (DataProcessingException e) {
+            logger.error("User {} dose not exist", username);
             throw new UsernameNotFoundException("User " + username + " dose not exist", e);
         }
         UserBuilder builder;
@@ -31,6 +35,7 @@ public class CustomUserDetailsService implements UserDetailsService {
         builder.roles(user.getRoles().stream()
                 .map(r -> r.getRoleName().name())
                 .toArray(String[]::new));
+        logger.info("User {} authorised in application", username);
         return builder.build();
     }
 }

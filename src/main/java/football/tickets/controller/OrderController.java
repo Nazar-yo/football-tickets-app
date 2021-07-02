@@ -1,7 +1,5 @@
 package football.tickets.controller;
 
-import java.util.List;
-import java.util.stream.Collectors;
 import football.tickets.dto.response.OrderResponseDto;
 import football.tickets.model.ShoppingCart;
 import football.tickets.model.User;
@@ -9,6 +7,8 @@ import football.tickets.service.OrderService;
 import football.tickets.service.ShoppingCartService;
 import football.tickets.service.UserService;
 import football.tickets.service.mapper.OrderMapper;
+import java.util.List;
+import java.util.stream.Collectors;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.GetMapping;

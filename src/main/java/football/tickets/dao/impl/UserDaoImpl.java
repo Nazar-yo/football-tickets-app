@@ -1,10 +1,10 @@
 package football.tickets.dao.impl;
 
-import java.util.Optional;
 import football.tickets.dao.AbstractDao;
 import football.tickets.dao.UserDao;
 import football.tickets.exception.DataProcessingException;
 import football.tickets.model.User;
+import java.util.Optional;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;

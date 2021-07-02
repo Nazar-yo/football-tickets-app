@@ -1,12 +1,12 @@
 package football.tickets.service.impl;
 
-import java.util.Set;
-import javax.annotation.PostConstruct;
 import football.tickets.model.Role;
 import football.tickets.model.RoleName;
 import football.tickets.model.User;
 import football.tickets.service.RoleService;
 import football.tickets.service.UserService;
+import java.util.Set;
+import javax.annotation.PostConstruct;
 import org.springframework.stereotype.Component;
 
 @Component
