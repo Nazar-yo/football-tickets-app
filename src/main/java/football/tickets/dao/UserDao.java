@@ -1,0 +1,12 @@
+package football.tickets.dao;
+
+import java.util.Optional;
+import football.tickets.model.User;
+
+public interface UserDao {
+    User add(User user);
+
+    Optional<User> get(Long id);
+
+    Optional<User> findByEmail(String email);
+}
