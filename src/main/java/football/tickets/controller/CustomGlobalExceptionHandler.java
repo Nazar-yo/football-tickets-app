@@ -5,8 +5,8 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
-import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.context.support.DefaultMessageSourceResolvable;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -18,7 +18,7 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 
 @ControllerAdvice
 public class CustomGlobalExceptionHandler extends ResponseEntityExceptionHandler {
-    private final static Logger logger = LogManager.getLogger(CustomGlobalExceptionHandler.class);
+    private static final Logger logger = LogManager.getLogger(CustomGlobalExceptionHandler.class);
 
     @Override
     protected ResponseEntity<Object> handleMethodArgumentNotValid(
@@ -35,7 +35,7 @@ public class CustomGlobalExceptionHandler extends ResponseEntityExceptionHandler
                 .map(DefaultMessageSourceResolvable::getDefaultMessage)
                 .collect(Collectors.toList());
         body.put("errors", errors);
-        logger.error(ex.getMessage()+ " : " + errors + " http status : " + status.value());
+        logger.error(ex.getMessage() + " : " + errors + " http status : " + status.value());
         return new ResponseEntity<>(body, headers, status);
     }
 }
