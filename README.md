@@ -49,4 +49,7 @@ This is RESTfull web application for buying tickets on footballs matches. Also, 
 - Authentication is implemented with Spring security.
 
 ### **🦾 Technologies used**
-Java, Spring (MVC, Security, Web), Hibernate, RDBMS MySQL, Apache Tomcat, Apache Maven
+- Java 
+- Spring (MVC, Security, Web)
+- Hibernate, RDBMS MySQL
+- Apache Tomcat, Apache Maven
